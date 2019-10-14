@@ -11,7 +11,7 @@ const Gallery = ({
   openModal,
   closeModal,
 }) => (
-  <>
+  <div>
     <ul className={style.gallery}>
       {photos.map(el => (
         <PhotoCard
@@ -32,7 +32,7 @@ const Gallery = ({
     <button className={style.button} type="button" onClick={showMorePhotos}>
       Load more
     </button>
-  </>
+  </div>
 );
 
 Gallery.defaultProps = {

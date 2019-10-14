@@ -14,49 +14,43 @@ const PhotoCard = ({
   openModal,
   closeModal,
   checkedImg,
-}) => {
-  return (
-    <li className={style.photoCard}>
-      <img className={style.photoCardImg} src={url} alt="" />
+}) => (
+  <li className={style.photoCard}>
+    <img className={style.photoCardImg} src={url} alt="" />
 
-      <div className={style.stats}>
-        <p className={style.statsItem}>
-          <i className="material-icons">thumb_up</i>
-          {likes}
-        </p>
-        <p className={style.statsItem}>
-          <i className="material-icons">visibility</i>
-          {views}
-        </p>
-        <p className={style.statsItem}>
-          <i className="material-icons">comment</i>
-          {comments}
-        </p>
-        <p className={style.statsItem}>
-          <i className="material-icons">cloud_download</i>
-          {downloads}
-        </p>
-      </div>
+    <div className={style.stats}>
+      <p className={style.statsItem}>
+        <i className="material-icons">thumb_up</i>
+        {likes}
+      </p>
+      <p className={style.statsItem}>
+        <i className="material-icons">visibility</i>
+        {views}
+      </p>
+      <p className={style.statsItem}>
+        <i className="material-icons">comment</i>
+        {comments}
+      </p>
+      <p className={style.statsItem}>
+        <i className="material-icons">cloud_download</i>
+        {downloads}
+      </p>
+    </div>
 
-      <button
-        type="button"
-        className={style.fullscreenButton}
-        onClick={() => openModal(id)}
-      >
-        <i className="material-icons">zoom_out_map</i>
-      </button>
-      {isOpenModal && (
-        <Modal closeModal={closeModal}>
-          <img
-            className={style.modalImg}
-            src={checkedImg.largeImageURL}
-            alt=""
-          />
-        </Modal>
-      )}
-    </li>
-  );
-};
+    <button
+      type="button"
+      className={style.fullscreenButton}
+      onClick={() => openModal(id)}
+    >
+      <i className="material-icons">zoom_out_map</i>
+    </button>
+    {isOpenModal && (
+      <Modal closeModal={closeModal}>
+        <img className={style.modalImg} src={checkedImg.largeImageURL} alt="" />
+      </Modal>
+    )}
+  </li>
+);
 
 PhotoCard.defaultProps = {
   checkedImg: {},
